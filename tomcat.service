@@ -1,0 +1,13 @@
+[Unit]
+Description=Tomcat Simple Instance
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+ExecStart=/usr/share/tomcat-7/bin/startup.sh
+
+ExecStop=/usr/share/tomcat-7/bin/shutdown.sh
+
+[Install]
+WantedBy=multi-user.target
