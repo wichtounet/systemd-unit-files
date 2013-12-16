@@ -1,0 +1,22 @@
+[Unit]
+Description=Network Connectivity for %i
+Wants=network.target
+Before=network.target
+BindsTo=sys-subsystem-net-devices-%i.device
+After=sys-subsystem-net-devices-%i.device
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+EnvironmentFile=/etc/conf.d/network@%i
+
+ExecStart=/bin/ip link set dev %i up
+ExecStart=/bin/ip addr add ${address}/${netmask} broadcast ${broadcast} dev %i
+ExecStart=/bin/ip route add default via ${gateway}
+
+ExecStop=/bin/ip addr flush dev %i
+ExecStop=/bin/ip link set dev %i down
+Execstop=/bin/ip addr delete ${address}/${netmask} dev %i
+
+[Install]
+WantedBy=multi-user.target
