@@ -1,0 +1,12 @@
+[Unit]
+Description=Zabbix Agent
+After=syslog.target network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/zabbix_agentd
+RemainAfterExit=yes
+PIDFile=/run/zabbix/zabbix_agentd.pid
+
+[Install]
+WantedBy=multi-user.target
