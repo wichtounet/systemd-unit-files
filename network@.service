@@ -16,7 +16,7 @@ ExecStart=/bin/ip route add default via ${gateway}
 
 ExecStop=/bin/ip addr flush dev %i
 ExecStop=/bin/ip link set dev %i down
-Execstop=/bin/ip addr delete ${address}/${netmask} dev %i
+ExecStop=/bin/ip addr delete ${address}/${netmask} dev %i
 
 [Install]
 WantedBy=multi-user.target
