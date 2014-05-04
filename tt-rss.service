@@ -4,8 +4,9 @@ After=network.target
 After=postgresql.service
 
 [Service]
-ExecStart=/usr/bin/php /usr/share/webapps/tt-rss/update.php --daemon
-User=http
+ExecStart=/usr/bin/php /var/www/localhost/htdocs/tt-rss/update.php --daemon
+User=ttrssd
+Group=ttrssd
 StandardOutput=syslog
 
 [Install]
