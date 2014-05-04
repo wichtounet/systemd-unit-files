@@ -1,0 +1,12 @@
+[Unit]
+Description=Couchpotato
+
+[Service]
+ExecStart=/usr/bin/python2 /usr/share/couchpotato/CouchPotato.py --daemon --pid_file /var/run/couchpotato/couchpotato.pid --data_dir /var/couchpotato --config_file /etc/couchpotato/couchpotato.ini
+PIDFile=/var/run/couchpotato/couchpotato.pid
+Type=forking
+User=couchpotato
+Group=couchpotato
+
+[Install]
+WantedBy=multi-user.target
