@@ -1,5 +1,5 @@
 [Unit]
-Description=Internet PVR for your TV Shows
+Description=Sickbeard
 
 [Service]
 ExecStart=/usr/bin/python2 /usr/share/sickbeard/SickBeard.py --daemon --pidfile /var/run/sickbeard/sickbeard.pid --datadir /var/sickbeard --nolaunch --config /etc/sickbeard/sickbeard.ini --port 8002
