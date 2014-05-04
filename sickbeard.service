@@ -4,7 +4,7 @@ Description=Internet PVR for your TV Shows
 [Service]
 ExecStart=/usr/bin/python2 /usr/share/sickbeard/SickBeard.py --daemon --pidfile /var/run/sickbeard/sickbeard.pid --datadir /var/sickbeard --nolaunch --config /etc/sickbeard/sickbeard.ini --port 8002
 PIDFile=/var/run/sickbeard/sickbeard.pid
-Type=simple
+Type=forking
 User=sickbeard
 Group=sickbeard
 
