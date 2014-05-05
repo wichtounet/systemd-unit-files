@@ -1,0 +1,9 @@
+[Unit]
+Description=taskd
+
+[Service]
+ExecStart=/usr/bin/taskd server --daemon --data /data/tasks/
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
