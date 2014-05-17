@@ -4,7 +4,8 @@ Wants=network.target
 
 [Service]
 WorkingDirectory=/opt/teamspeak3-server/
-User=admin
+User=teamspeak3
+Group=teamspeak3
 ExecStart=/opt/teamspeak3-server/ts3server_minimal_runscript.sh
 ExecStop=/opt/teamspeak3-server/ts3server_startscript.sh stop
 ExecReload=/opt/teamspeak3-server/ts3server_startscript.sh restart
