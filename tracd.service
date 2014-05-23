@@ -2,7 +2,7 @@
 Description=tracd
 
 [Service]
-ExecStart=/usr/bin/tracd -p 8006 -b 192.168.1.211 --base-path=/trac/ --basic-auth="*,/data/trac/.htpasswd," -e /data/trac/
+ExecStart=/usr/bin/tracd -p 8006 -b 192.168.1.211 --base-path=/trac/ --basic-auth *,/data/trac/.htpasswd, -e /data/trac/
 
 User=tracd
 Group=tracd
