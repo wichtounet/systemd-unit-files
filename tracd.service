@@ -1,0 +1,11 @@
+[Unit]
+Description=tracd
+
+[Service]
+ExecStart=/usr/bin/tracd -p 8006 -b 192.168.1.211 --base-path=/trac/ -e /data/trac/
+User=tracd
+Group=tracd
+StandardOutput=syslog
+
+[Install]
+WantedBy=multi-user.target
