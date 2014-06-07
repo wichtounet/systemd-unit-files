@@ -4,7 +4,7 @@ After=syslog.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/java -jar /usr/lib64/jenkins/jenkins.war
+ExecStart=/usr/bin/java -jar /usr/lib64/jenkins/jenkins.war --httpPort=8007 --prefix=/jenkins
 User=jenkins
 
 [Install]
