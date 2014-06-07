@@ -1,0 +1,11 @@
+[Unit]
+Description=Jenkins Daemon
+After=syslog.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/java -jar /usr/lib64/jenkins/jenkins.war
+User=jenkins
+
+[Install]
+WantedBy=multi-user.target
