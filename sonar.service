@@ -1,0 +1,15 @@
+[Unit]
+Description=Sonar 4
+After=network.target
+
+[Service]
+ExecStart=/opt/sonar/bin/linux-x86-64/sonar.sh start
+ExecStop=/opt/sonar/bin/linux-x86-64/sonar.sh stop
+ExecReload=/opt/sonar/bin/linux-x86-64/sonar.sh restart
+PIDFile=/opt/sonar/bin/linux-x86-64/./SonarQube.pid
+Type=forking
+User=sonar
+
+
+[Install]
+WantedBy=multi-user.target
