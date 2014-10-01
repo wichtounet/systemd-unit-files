@@ -1,5 +1,7 @@
 [Unit]
 Description=Couchpotato
+Wants=network-online.target
+After=network-online.target
 
 [Service]
 ExecStart=/usr/bin/python2 /usr/share/couchpotato/CouchPotato.py --daemon --pid_file /var/run/couchpotato/couchpotato.pid --data_dir /var/couchpotato --config_file /etc/couchpotato/couchpotato.ini

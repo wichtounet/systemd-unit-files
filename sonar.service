@@ -1,6 +1,7 @@
 [Unit]
 Description=Sonar 4
-After=network.target
+After=network.target network-online.target
+Wants=network-online.target
 
 [Service]
 ExecStart=/opt/sonar/bin/linux-x86-64/sonar.sh start
