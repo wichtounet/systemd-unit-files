@@ -1,6 +1,7 @@
 [Unit]
 Description=Jenkins Daemon
-After=syslog.target
+After=syslog.target network-online.target
+Wants=network-online.target
 
 [Service]
 Type=simple

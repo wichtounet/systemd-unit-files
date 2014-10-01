@@ -1,5 +1,7 @@
 [Unit]
 Description=taskd
+Wants=network-online.target
+After=network-online.target
 
 [Service]
 ExecStart=/usr/bin/taskd server --daemon --data /data/tasks/

@@ -1,7 +1,7 @@
 [Unit]
 Description=Tiny Tiny RSS feeds update daemon
 After=network.target
-After=postgresql.service
+After=postgresql-9.3.service
 
 [Service]
 ExecStart=/usr/bin/php /var/www/localhost/htdocs/tt-rss/update.php --daemon
