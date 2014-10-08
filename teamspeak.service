@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 Environment=LD_LIBRARY_PATH=/opt/teamspeak3-server
 WorkingDirectory=/opt/teamspeak3-server
-ExecStart=/opt/teamspeak3-server/ts3server-bin inifile=/etc/teamspeak3-server/server.conf
+ExecStart=/opt/teamspeak3-server/sbin/ts3server-bin inifile=/etc/teamspeak3-server/server.conf
 ExecStop=/bin/kill -15 $MAINPID
 StandardOutput=syslog
 StandardError=syslog

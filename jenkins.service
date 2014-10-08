@@ -1,0 +1,12 @@
+[Unit]
+Description=Jenkins Daemon
+After=syslog.target network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/java -jar /usr/lib64/jenkins/jenkins.war --httpPort=8007 --prefix=/jenkins
+User=jenkins
+
+[Install]
+WantedBy=multi-user.target

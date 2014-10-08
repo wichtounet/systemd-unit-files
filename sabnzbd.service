@@ -1,12 +1,13 @@
 [Unit]
 Description=Sabnzbd
-After=network.target
+Wants=network-online.target
+After=network-online.target
 
 [Service]
 User=sabnzbd
 Group=sabnzbd
-ExecStart=/usr/bin/sabnzbd --config-file /etc/sabnzbd/sabnzbd.ini --logging 1 --daemon --pid /var/run/sabnzbd
-PIDFile=/var/run/sabnzbd/sabnzbd-8001.pid
+ExecStart=/usr/bin/python2.7 /usr/share/sabnzbd/SABnzbd.py --config-file /etc/sabnzbd/sabnzbd.ini --logging 1 --daemon --pid /var/run/sabnzbd/
+PIDFile=/var/run/sabnzbd/sabnzbd-9090.pid
 Type=forking
 
 [Install]

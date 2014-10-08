@@ -1,0 +1,14 @@
+[Unit]
+Description=tracd
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/tracd -p 8006 -b 192.168.10.101 --base-path=/trac/ --basic-auth *,/data/trac/.htpasswd, -e /data/trac/
+
+User=tracd
+Group=tracd
+StandardOutput=syslog
+
+[Install]
+WantedBy=multi-user.target
