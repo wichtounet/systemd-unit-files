@@ -1,0 +1,17 @@
+[Unit]
+Description=CrashPlan
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+PIDFile=/usr/local/crashplan/CrashPlanEngine.pid
+EnvironmentFile=/usr/local/crashplan/bin/run.conf
+WorkingDirectory=/usr/local/crashplan
+ExecStart=/usr/local/crashplan/bin/CrashPlanEngine start
+ExecStop=/usr/local/crashplan/bin/CrashPlanEngine stop
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
